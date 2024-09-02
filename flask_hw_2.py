@@ -114,5 +114,3 @@ print("\n")
 
 print("Beispiel 5 Ergebnis:")
 print(process_user_registration(json_input5))
-
-
