@@ -16,14 +16,14 @@ class User(BaseModel):
     @field_validator('name')
     def name_must_be_alpha(cls, v):
         if not v.replace(" ", "").isalpha():
-            raise ValueError('Name must only contain alphabetic characters and spaces')
+            raise ValueError('Name must only contain alphabetic characters and spaces!!!')
         return v
 
     @field_validator('is_employed')
     def check_age_and_employment(cls, v, info):
         age = info.data.get('age')
         if v and age is not None and (age < 18 or age > 65):
-            raise ValueError('Employed users must be between 18 and 65 years old')
+            raise ValueError('Employed users must be between 18 and 65 years old?')
         return v
 
 def process_user_registration(json_data: str) -> str:
